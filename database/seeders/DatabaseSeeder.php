@@ -78,8 +78,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'Director@sreechemicals.com',
             'phone' => '+91 87586 78787',
             'whatsapp' => '+91 87586 78787',
-            'address' => '101, Chemical Zone, GIDC, Vadodara, Gujarat, India',
-            'map_iframe' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118106.70010221617!2d73.1122241!3d22.3071588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc8ab91a3ddab%3A0xac39d3b311572119!2sVadodara%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1717235282000!5m2!1sen!2sin',
+            'address' => '124, Nexus-1, Uttarsanda Road, Nadiad, Gujarat, India',
+            'map_iframe' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14716.208453472147!2d72.8532468!3d22.6891045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e5b3252069cb1%3A0xe54e60155b998cfb!2sNadiad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1717235282000!5m2!1sen!2sin',
             'facebook_url' => 'https://facebook.com',
             'instagram_url' => 'https://instagram.com',
             'linkedin_url' => 'https://linkedin.com',
@@ -87,8 +87,8 @@ class DatabaseSeeder extends Seeder
             'about_intro' => 'Sree Chemicals is a leading manufacturer of premium, industrial-grade and household cleaning products, dedicated to hygiene, safety, and sustainable environmental care.',
             'about_mission' => 'To deliver state-of-the-art cleaning solutions that ensure ultimate hygiene while maintaining eco-friendly formulations.',
             'about_vision' => 'To become the global standard in cleaning chemical manufacture, empowering homes and industries with premium quality products.',
-            'about_experience' => '15+ Years of Excellence',
-            'about_history' => 'Founded in 2011, Sree Chemicals operates a state-of-the-art automated manufacturing facility serving over 500+ dealers nationwide and supplying premium cleaning solutions to major industrial hubs.'
+            'about_experience' => 'Excellence in Quality',
+            'about_history' => 'Sree Chemicals operates a state-of-the-art automated manufacturing facility in Nadiad, Gujarat serving over 500+ dealers nationwide and supplying premium cleaning solutions to major industrial hubs.'
         ];
 
         foreach ($settings as $key => $val) {
@@ -116,7 +116,7 @@ class DatabaseSeeder extends Seeder
             'gallery' => ['title' => 'Sree Chemicals Media Gallery - Factory, Products & Events', 'desc' => 'Browse photos of our advanced automated chemical manufacturing facility, quality laboratory, team members, and events.'],
             'market-area' => ['title' => 'Market Coverage & Dealer Network - Sree Chemicals', 'desc' => 'See our active dealer footprint and market area coverage across India. Interactive maps and state-wide dealer directory.'],
             'blog' => ['title' => 'Sree Chemicals Hygiene Blog - Sanitation Tips & Corporate News', 'desc' => 'Read our latest posts on home sanitization guidelines, industrial degreasing best practices, and new product launch announcements.'],
-            'contact' => ['title' => 'Contact Sree Chemicals - Vadodara Office & Factory', 'desc' => 'Get in touch with Sree Chemicals for custom manufacturing, bulk orders, and queries. Call, email, or WhatsApp us.'],
+            'contact' => ['title' => 'Contact Sree Chemicals - Nadiad Office & Factory', 'desc' => 'Get in touch with Sree Chemicals for custom manufacturing, bulk orders, and queries. Call, email, or WhatsApp us.'],
             'dealer-registration' => ['title' => 'Become a Sree Chemicals Authorized Dealer - Apply Online', 'desc' => 'Register as an authorized retail dealer of Sree Chemicals Cleaning Products. High margins, exclusive rights, and sales support.'],
             'distributor-registration' => ['title' => 'Become a Sree Chemicals Distributor - Distribution Form', 'desc' => 'Apply to become a state/district level distributor. Join India\'s premier cleaning chemicals supply chain network.']
         ];
@@ -126,23 +126,20 @@ class DatabaseSeeder extends Seeder
                 'page_name' => $page,
                 'meta_title' => $data['title'],
                 'meta_description' => $data['desc'],
-                'keywords' => 'hand wash, dish wash, cleaning chemicals manufacturer, floor cleaner, industrial chemicals, Vadodara chemicals',
+                'keywords' => 'hand wash, dish wash, cleaning chemicals manufacturer, floor cleaner, industrial chemicals, Nadiad chemicals',
                 'canonical_url' => 'http://localhost/' . ($page === 'home' ? '' : $page),
                 'og_image_path' => '/assets/images/og-image.jpg'
             ]);
         }
 
-        // 7. Seed Categories
+        // 7. Seed Categories (Only 5 Categories as per user requirement)
         Category::truncate();
         $categories = [
-            ['name' => 'Hand Wash', 'slug' => 'hand-wash', 'desc' => 'Gentle on skin, tough on germs. Formulated with skin-nourishing moisturizers.', 'img' => '/assets/images/cat-handwash.jpg'],
-            ['name' => 'Dish Wash', 'slug' => 'dish-wash', 'desc' => 'Advanced grease-cutting formula leaving utensils sparkling clean and odor-free.', 'img' => '/assets/images/cat-dishwash.jpg'],
-            ['name' => 'Floor Cleaner', 'slug' => 'floor-cleaner', 'desc' => 'Gloss-enhancing, multi-surface disinfectant floor cleaner with long-lasting scent.', 'img' => '/assets/images/cat-floorcleaner.jpg'],
-            ['name' => 'Glass Cleaner', 'slug' => 'glass-cleaner', 'desc' => 'Streak-free shining spray for windows, mirrors, car windscreens, and laminates.', 'img' => '/assets/images/cat-glasscleaner.jpg'],
-            ['name' => 'Toilet Cleaner', 'slug' => 'toilet-cleaner', 'desc' => 'Deep scale-removing acidic formula that clings to bowl surfaces for deep sanitizing.', 'img' => '/assets/images/cat-toiletcleaner.jpg'],
-            ['name' => 'Detergent Powder', 'slug' => 'detergent-powder', 'desc' => 'Heavy-duty cleaning powder for brilliant whites and deep stain removal.', 'img' => '/assets/images/cat-detpowder.jpg'],
-            ['name' => 'Laundry Liquid', 'slug' => 'laundry-liquid', 'desc' => 'Concentrated laundry liquid that preserves fabric color and removes tough stains.', 'img' => '/assets/images/cat-liquiddet.jpg'],
-            ['name' => 'Industrial Degreaser', 'slug' => 'industrial-degreaser', 'desc' => 'Heavy-duty degreasers, machinery cleaners, and sanitizers for factory floors and plants.', 'img' => '/assets/images/cat-industrial.jpg'],
+            ['name' => 'Hand Wash', 'slug' => 'hand-wash', 'desc' => 'Moisturizing Hand Wash Gel - Powerful protection & gentle care, keeping your hands germ-free.', 'img' => '/assets/images/orvin-handwash.png'],
+            ['name' => 'Dish Washer', 'slug' => 'dish-washer', 'desc' => 'Concentrated Dish Washer Liquid - Removes grease & tough stains for sparkling clean utensils.', 'img' => '/assets/images/orvin-dish.png'],
+            ['name' => 'Toilet Cleaner', 'slug' => 'toilet-cleaner', 'desc' => 'Concentrated Toilet Cleaner - Eliminates tough stains & kills 99.9% of germs.', 'img' => '/assets/images/orvin-toilet.png'],
+            ['name' => 'Floor Cleaner', 'slug' => 'floor-cleaner', 'desc' => 'Concentrated Floor Cleaner - Keeps germs away with clean & fresh formula killing 99.9% of germs.', 'img' => '/assets/images/orvin-floor.png'],
+            ['name' => 'Washing Liquid', 'slug' => 'washing-liquid', 'desc' => 'Washing Liquid Front & Top Load - Tough on stains & odors, brightens and freshens clothes.', 'img' => '/assets/images/orvin-laundry.png'],
         ];
 
         $catModels = [];
@@ -155,98 +152,70 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
-        // 8. Seed Products
+        // 8. Seed Products (Only 5 Products as per user requirement)
         Product::truncate();
         ProductImage::truncate();
         
         $productsSeed = [
             [
                 'category_slug' => 'hand-wash',
-                'name' => 'SoftShield Premium Hand Wash',
-                'slug' => 'softshield-premium-hand-wash',
-                'short' => 'Advanced germ protection combined with skin-conditioning moisturizers.',
-                'desc' => 'SoftShield Premium Hand Wash is a pH-balanced, dermatologically tested formulation designed to eliminate 99.9% of harmful bacteria while keeping your hands soft, hydrated, and pleasantly scented. Formulated with Aloe Vera extract and Glycerin, it is perfect for frequent use in homes, offices, and commercial establishments.',
-                'specs' => ['pH Level' => '5.5 - 6.5', 'Fragrance' => 'Aqua Fresh / Rose Garden', 'Form' => 'Thick Pearlescent Gel', 'Shelf Life' => '24 Months', 'Packaging' => '250ml Pump, 1L Refill, 5L Can'],
-                'features' => ['Eliminates 99.9% of pathogens instantly', 'Dermatologically safe for sensitive skin', 'Rich lathering action', 'Rich in Aloe Vera & Vitamin E'],
-                'benefits' => ['Keeps hands soft despite frequent washing', 'Pleasant lingering floral scent', 'Highly cost-effective in bulk 5L packaging', 'Non-toxic, eco-friendly ingredients'],
-                'apps' => ['Residential kitchens and washrooms', 'Corporate office blocks and complexes', 'Hospitals and healthcare centers', 'Restaurants, cafes, and hotels']
+                'name' => 'Orvin Hand Wash Gel',
+                'slug' => 'orvin-hand-wash-gel',
+                'short' => 'Moisturizing Hand Wash Gel with 100% natural formula. Powerful protection and gentle care.',
+                'desc' => 'A Drop of this mean boy unleashes the power of a germ-fighting kraken. A powerful gel concentrate with naturally-derived, bio-degradable ingredients that doesn\'t just clean but moisturizes too.',
+                'specs' => ['Formula' => '100% Natural Gel Concentrate', 'Protection' => 'Kills 99% of Germs', 'Fragrance' => 'Different Fragrances Available', 'Skin Care' => 'Moisturizing & Gentle Care'],
+                'features' => ['Keep your hands germ-free', 'Powerful Protection, Gentle Care', 'Kills 99% of Germs', '100% Natural Formula'],
+                'benefits' => ['Cleans and moisturizes hands simultaneously', 'Naturally-derived, bio-degradable ingredients', 'Different fragrances available'],
+                'apps' => ['Home washrooms and kitchens', 'Offices, restaurants, and hotels'],
+                'img' => '/assets/images/orvin-handwash.png'
             ],
             [
-                'category_slug' => 'dish-wash',
-                'name' => 'Sparkle Shine Dish Wash Liquid',
-                'slug' => 'sparkle-shine-dish-wash-liquid',
-                'short' => 'Ultra grease-cutting active lemon formulation for sparkling clean utensils.',
-                'desc' => 'Sparkle Shine Dish Wash Liquid is an ultra-concentrated formula engineered with active lemon oil extracts to quickly dissolve heavy grease, burnt food, and oils from non-stick cookware, glassware, steel, and ceramic plates. A single spoonful is enough to clean an entire sink of utensils without leaving white scratch residues.',
-                'specs' => ['Active Matter' => '15%', 'pH Level' => '6.5 - 7.5', 'Color' => 'Vibrant Green', 'Fragrance' => 'Zesty Lemon', 'Packaging' => '250ml, 500ml, 1L, 5L Can'],
-                'features' => ['Fast grease dissolve action', 'Zero phosphate formulation', 'Gentle on hands, hard on stains', 'Rinses off completely without residue'],
-                'benefits' => ['Restores sparkling shine to stainless steel and glass', 'Neutralizes bad food odors (fish, onion, garlic)', 'High concentration ensures longer usage', 'Safe for expensive non-stick coatings'],
-                'apps' => ['Household kitchen washing', 'Commercial hotel pantries', 'Industrial food catering operations', 'School and hospital mess halls']
-            ],
-            [
-                'category_slug' => 'floor-cleaner',
-                'name' => 'CitrusGlow Floor Cleaner',
-                'slug' => 'citrusglow-floor-cleaner',
-                'short' => 'Disinfectant floor cleaner with 10x cleaning action and citrus aroma.',
-                'desc' => 'CitrusGlow is a premium disinfectant floor cleaner that quickly cuts through grime, oily residues, and sticky stains. Formulated with surface-safe builders, it is suitable for marble, granite, ceramic tiles, mosaic, and laminated hardwood floors. It kills pathogens and leaves a beautiful long-lasting citrus fragrance.',
-                'specs' => ['pH Level' => '7.0 - 8.0 (Neutral)', 'Sanitizing Agent' => 'Benzalkonium Chloride (BKC)', 'Form' => 'Liquid Concentrated Soluble', 'Fragrance' => 'Lemongrass & Citrus', 'Packaging' => '500ml, 1L, 5L, 20L Can'],
-                'features' => ['Kills 99.9% germs (BKC active)', '10x superior soil lifting action', 'Dries quickly with zero streak marks', 'Surface safe - no harsh acids or bleaches'],
-                'benefits' => ['Restores natural floor shine', 'Long lasting insect-repellent properties', 'Pleasant aromatherapy lemongrass odor', 'Safe for households with pets and children'],
-                'apps' => ['Tiled residential floors', 'Large airport and hotel lobby tiling', 'Supermarket and retail showroom flooring', 'Hospital corridors']
-            ],
-            [
-                'category_slug' => 'glass-cleaner',
-                'name' => 'CrystalClear Glass Cleaner',
-                'slug' => 'crystalclear-glass-cleaner',
-                'short' => 'Streak-free shining spray for windows, mirrors, and laminates.',
-                'desc' => 'CrystalClear Glass Cleaner is formulated with fast-evaporating cleaning agents that lift dust, fingerprints, grease, and smoke film from glass, mirror, vehicle windshields, and laminated corporate tables. It dries streak-free and restores high transparency gloss.',
-                'specs' => ['Active Builders' => 'Isopropyl Alcohol base', 'pH Level' => '6.0 - 7.0', 'Form' => 'Clear Blue Spray Liquid', 'Packaging' => '500ml Spray, 5L Can'],
-                'features' => ['Fast streak-free evaporation', 'Resists dust accumulation due to anti-static shield', 'Perfect for mirrors, windscreens, and display shelves'],
-                'benefits' => ['Provides crystal clear visibility', 'Saves wiping time', 'Safe for automobile tinted glass'],
-                'apps' => ['Glass facades & showroom window panes', 'Hotel lobbies and mirror structures', 'Home and vehicle detailing']
+                'category_slug' => 'dish-washer',
+                'name' => 'Orvin Dish Washer Gel',
+                'slug' => 'orvin-dish-washer-gel',
+                'short' => 'Concentrated Dish Washer Liquid. Removes grease & tough stains for sparkling shine.',
+                'desc' => 'A Drop of this mean boy unleashes the power of a germ-fighting kraken. A powerful gel concentrate with naturally-derived, bio-degradable ingredients that doesn\'t just clean but moisturizes too.',
+                'specs' => ['Formula' => '100% Natural Concentrated Liquid', 'Cleaning' => 'Removes Grease & Tough Stains', 'Fragrance' => 'Different Fragrances Available', 'Finish' => 'Sparkling Shine, Gentle on Hands'],
+                'features' => ['Removes Grease & Tough Stains', 'Sparkling Shine, Gentle on Hands', 'Powerful Formula for Everyday Cleaning', '100% Natural Formula'],
+                'benefits' => ['Easily cuts through tough grease and burnt food', 'Gentle on hands without harsh irritation', 'Leaves dishes sparkling clean'],
+                'apps' => ['Everyday kitchen utensil cleaning', 'Glassware, cookware, and ceramic plates'],
+                'img' => '/assets/images/orvin-dish.png'
             ],
             [
                 'category_slug' => 'toilet-cleaner',
-                'name' => 'AcidFlush Ultra Toilet Cleaner',
-                'slug' => 'acidflush-ultra-toilet-cleaner',
-                'short' => 'Deep scale-removing acidic formula for ultimate toilet sanitizing.',
-                'desc' => 'AcidFlush Ultra Toilet Cleaner is an advanced thick sanitizing formula that clings to the toilet bowl surface below the rim, dissolving stubborn limescale, yellow stains, and organic soils. It kills 99.9% of bacteria and leaves a fresh clean scent.',
-                'specs' => ['pH Level' => '1.5 - 2.5 (Acidic)', 'Active Matter' => 'Hydrochloric Acid based', 'Form' => 'Thick Clinging Blue Liquid', 'Packaging' => '500ml, 1L, 5L Can'],
-                'features' => ['Thick formula clings to bowl surfaces', 'Rapidly dissolves limescale and rust stains', 'Easy reach nozzles for under the rim application'],
-                'benefits' => ['Restores sparkling white porcelain look', 'Deodorizes and leaves a fresh sanitizing aroma', 'Deep sanitizing action kills germs'],
-                'apps' => ['Household ceramic toilet bowls', 'Office restroom urinal fittings', 'Hospital and hotel washrooms']
+                'name' => 'Orvin Toilet Cleaner',
+                'slug' => 'orvin-toilet-cleaner',
+                'short' => 'Concentrated Toilet Cleaner. Eliminates tough stains & kills 99.9% of germs.',
+                'desc' => 'A Drop of this mean boy unleashes the power of a germ-fighting kraken. A powerful gel concentrate with naturally-derived, bio-degradable ingredients that doesn\'t just clean but moisturizes too.',
+                'specs' => ['Protection' => 'Kills 99.9% of Germs', 'Formula' => 'Advanced Formula Ultra Deep Clean', 'Action' => 'Eliminates Tough Stains', 'Fragrance' => 'Fresh Sanitizing Fragrance'],
+                'features' => ['Eliminates Tough Stains & 99.9% of Germs', 'Advanced Formula Ultra Deep Clean', 'Ultra Deep Clean Action', 'Fresh Fragrance'],
+                'benefits' => ['Eliminates stubborn toilet stains and limescale', 'Kills 99.9% of germs instantly', 'Deep sanitizing action'],
+                'apps' => ['Residential toilet bowls and urinals', 'Commercial and corporate washrooms'],
+                'img' => '/assets/images/orvin-toilet.png'
             ],
             [
-                'category_slug' => 'detergent-powder',
-                'name' => 'ActiveOxy Detergent Powder',
-                'slug' => 'activeoxy-detergent-powder',
-                'short' => 'Heavy-duty cleaning powder for brilliant whites and deep stain removal.',
-                'desc' => 'ActiveOxy Detergent Powder features oxygen-bleach builders and multi-enzymes to penetrate deep into fabric fibers, lifting stubborn dirt, grass stains, grease, and sweat marks. Safe for white and colored clothes, it ensures a long-lasting fresh fragrance.',
-                'specs' => ['Active Matter' => '12%', 'Form' => 'Granular Powder with blue active particles', 'Fragrance' => 'Fresh Lemon & Lavender', 'Packaging' => '1kg Pack, 5kg Bag, 25kg Bulk Bag'],
-                'features' => ['Active oxygen-bleach technology', 'Multi-enzyme stain dissolving system', 'Low foam formula suitable for machine washes'],
-                'benefits' => ['Brightens whites and preserves colored fabrics', 'Leaves a lingering clean scent', 'Fights tough collar and cuff dirt'],
-                'apps' => ['Household laundry washing', 'Hospital bedsheet laundering units', 'Hotel linen washing departments']
+                'category_slug' => 'floor-cleaner',
+                'name' => 'Orvin Floor Cleaner',
+                'slug' => 'orvin-floor-cleaner',
+                'short' => 'Concentrated Floor Cleaner. Keeps germs away and kills 99.9% of germs & bacteria.',
+                'desc' => 'A Drop of this mean boy unleashes the power of a germ-fighting kraken. A powerful gel concentrate with naturally-derived, bio-degradable ingredients that doesn\'t just clean but moisturizes too.',
+                'specs' => ['Protection' => 'Kills 99.9% of Germs & Bacteria', 'Formula' => 'Clean & Fresh Disinfectant', 'Fragrance' => 'Different Fragrances Available', 'Surface' => 'Safe for All Floor Types'],
+                'features' => ['Keep the Germs Away', 'Clean & Fresh Action', 'Kills 99% of Germs & Bacteria', 'Different Fragrances Available'],
+                'benefits' => ['Leaves floors spotless with long-lasting freshness', 'Kills 99.9% of bacteria and germs', 'Safe on tile, marble, and granite'],
+                'apps' => ['Marble, tile, granite, and mosaic floors', 'Homes, offices, and commercial establishments'],
+                'img' => '/assets/images/orvin-floor.png'
             ],
             [
-                'category_slug' => 'laundry-liquid',
-                'name' => 'UltraClean Laundry Liquid',
-                'slug' => 'ultraclean-laundry-liquid',
-                'short' => 'Concentrated laundry liquid that preserves fabric color and removes tough stains.',
-                'desc' => 'UltraClean Laundry Liquid is a high-solubility concentrated liquid detergent designed to dissolve quickly in both hot and cold water. It removes stubborn grease, mud, and drink stains without leaving powdery residues on dark fabrics. Formulated with fabric conditioners, it keeps clothes soft.',
-                'specs' => ['pH Level' => '7.5 - 8.5', 'Active Matter' => '18%', 'Form' => 'Viscous Blue Fluid', 'Packaging' => '1L Bottle, 5L Can'],
-                'features' => ['Fast dissolve action with zero residues', 'Built-in fabric softener molecules', 'Dermatologically safe formulation'],
-                'benefits' => ['Prevents color fading and fabric wear', 'Excellent for automatic washing machines', 'Highly cost-effective per wash load'],
-                'apps' => ['Automatic front/top load washing machines', 'Hand wash delicate fabrics', 'Commercial laundry plants']
-            ],
-            [
-                'category_slug' => 'industrial-degreaser',
-                'name' => 'IndusDegrease Heavy Duty Degreaser',
-                'slug' => 'indusdegrease-heavy-duty-degreaser',
-                'short' => 'Concentrated industrial alkaline degreaser for machinery and shopfloors.',
-                'desc' => 'IndusDegrease is a heavy-duty, water-soluble alkaline degreaser designed to penetrate and emulsify stubborn deposits of grease, heavy oils, tar, carbon black, and wax. Formulated with advanced surfactants and corrosion inhibitors, it is perfect for cleaning machinery, engine blocks, factory floors, and garage surfaces without damaging metals.',
-                'specs' => ['pH Level' => '12.0 - 13.5 (Highly Alkaline)', 'Specific Gravity' => '1.05', 'Solubility' => '100% Water Soluble', 'Packaging' => '5L, 20L, 50L, 200L Barrel'],
-                'features' => ['Industrial grade high alkalinity', 'Contains rust and corrosion inhibitors', 'Rapidly emulsifies mineral oils and grease', 'Low foaming action suitable for scrubber machines'],
-                'benefits' => ['Safe on steel, iron, and concrete surfaces', 'Saves manual scrubbing labor and time', 'Dilutable up to 1:50 for light cleaning duties', 'Removes tough grease tracks easily'],
-                'apps' => ['Automotive garages and service hubs', 'CNC machining workshops', 'Manufacturing assembly lines', 'Petrochemical and metallurgical plants']
+                'category_slug' => 'washing-liquid',
+                'name' => 'Orvin Washing Liquid (Front & Top Load)',
+                'slug' => 'orvin-washing-liquid',
+                'short' => 'Washing Liquid for Front & Top Load machines. Tough on stains & odors, kills 99.9% of germs.',
+                'desc' => 'A Drop of this mean boy unleashes the power of a germ-fighting kraken. A powerful gel concentrate with naturally-derived, bio-degradable ingredients that doesn\'t just clean but moisturizes too.',
+                'specs' => ['Compatibility' => 'Front Load & Top Load Machines', 'Protection' => 'Kills 99.9% of Germs', 'Action' => 'Tough on Stains & Odors', 'Care' => 'Brightens & Freshens Clothes'],
+                'features' => ['Tough on Stains & Odors', 'Brightens & Freshens Clothes', 'Perfect for Top Load & Front Load Machines', 'Kills 99.9% of Germs'],
+                'benefits' => ['Dissolves quickly with zero powdery residue', 'Brightens whites and protects colored fabrics', 'Leaves clothes fresh and fragrant'],
+                'apps' => ['Top Load & Front Load automatic washing machines', 'Hand washing delicate clothes'],
+                'img' => '/assets/images/orvin-laundry.png'
             ]
         ];
 
@@ -270,7 +239,7 @@ class DatabaseSeeder extends Seeder
                 // Create primary image
                 ProductImage::create([
                     'product_id' => $prod->id,
-                    'image_path' => '/uploads/products/' . $p['slug'] . '.jpg',
+                    'image_path' => $p['img'],
                     'is_primary' => true
                 ]);
             }

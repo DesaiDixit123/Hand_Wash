@@ -324,24 +324,9 @@
             <div class="col-xl-3 col-lg-4 col-sm-6" data-aos="fade-up" data-aos-delay="{{ $loop->index * 50 }}">
                 <div class="premium-glow-card h-100 d-flex flex-column justify-content-between">
                     <div>
-                        <div class="category-img-wrapper d-flex align-items-center justify-content-center position-relative">
-                            <!-- Quality Badge -->
-                            <span class="position-absolute top-3 start-3 badge bg-white bg-opacity-75 text-dark border-0 shadow-sm font-outfit" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.5px;">PREMIUM GRADE</span>
-                            
-                            @if($category->slug == 'hand-wash')
-                                <i class="fa-solid fa-hand-holding-droplet display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
-                            @elseif($category->slug == 'dish-wash')
-                                <i class="fa-solid fa-wine-glass display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
-                            @elseif($category->slug == 'liquid-detergent' || $category->slug == 'fabric-wash')
-                                <i class="fa-solid fa-soap display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
-                            @elseif($category->slug == 'white-cleaner' || $category->slug == 'black-cleaner')
-                                <i class="fa-solid fa-prescription-bottle display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
-                            @elseif($category->slug == 'floor-cleaner')
-                                <i class="fa-solid fa-border-all display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
-                            @elseif($category->slug == 'toilet-cleaner')
-                                <i class="fa-solid fa-toilet display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
-                            @elseif($category->slug == 'industrial-cleaning-chemicals')
-                                <i class="fa-solid fa-flask-vial display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
+                        <div class="category-img-wrapper d-flex align-items-center justify-content-center position-relative" style="height: 180px; padding: 20px; background: linear-gradient(135deg, rgba(0, 180, 216, 0.04) 0%, rgba(0, 150, 199, 0.08) 100%);">
+                            @if($category->image_path)
+                                <img src="{{ asset($category->image_path) }}" alt="{{ $category->name }}" style="max-height: 140px; width: auto; object-fit: contain; transition: transform 0.4s ease;" class="category-card-img">
                             @else
                                 <i class="fa-solid fa-bucket display-3 text-teal" style="color: var(--secondary-blue-500); transition: transform 0.4s ease;"></i>
                             @endif
@@ -382,14 +367,14 @@
                             $catSlug = $product->category->slug ?? '';
                             if ($catSlug == 'hand-wash') {
                                 $bgStyle = 'linear-gradient(135deg, rgba(0, 180, 216, 0.06) 0%, rgba(0, 180, 216, 0.15) 100%)';
-                            } elseif ($catSlug == 'dish-wash') {
+                            } elseif (in_array($catSlug, ['dish-wash', 'dish-washer'])) {
                                 $bgStyle = 'linear-gradient(135deg, rgba(0, 200, 83, 0.06) 0%, rgba(0, 200, 83, 0.15) 100%)';
                             } elseif ($catSlug == 'floor-cleaner') {
                                 $bgStyle = 'linear-gradient(135deg, rgba(245, 158, 11, 0.06) 0%, rgba(245, 158, 11, 0.15) 100%)';
                             } elseif ($catSlug == 'toilet-cleaner') {
                                 $bgStyle = 'linear-gradient(135deg, rgba(30, 41, 59, 0.06) 0%, rgba(30, 41, 59, 0.15) 100%)';
-                            } elseif ($catSlug == 'industrial-degreaser') {
-                                $bgStyle = 'linear-gradient(135deg, rgba(15, 23, 42, 0.08) 0%, rgba(30, 41, 59, 0.2) 100%)';
+                            } elseif ($catSlug == 'washing-liquid') {
+                                $bgStyle = 'linear-gradient(135deg, rgba(14, 165, 233, 0.06) 0%, rgba(14, 165, 233, 0.15) 100%)';
                             }
                         @endphp
                         @php
@@ -400,11 +385,11 @@
                                 $hCatSlug = $product->category->slug ?? '';
                                 if ($hCatSlug == 'hand-wash') {
                                     $homeProductImage = asset('assets/images/orvin-handwash.png');
-                                } elseif ($hCatSlug == 'dish-wash') {
+                                } elseif (in_array($hCatSlug, ['dish-wash', 'dish-washer'])) {
                                     $homeProductImage = asset('assets/images/orvin-dish.png');
                                 } elseif ($hCatSlug == 'floor-cleaner') {
                                     $homeProductImage = asset('assets/images/orvin-floor.png');
-                                } elseif (in_array($hCatSlug, ['liquid-detergent', 'fabric-wash', 'laundry-liquid'])) {
+                                } elseif (in_array($hCatSlug, ['liquid-detergent', 'fabric-wash', 'laundry-liquid', 'washing-liquid'])) {
                                     $homeProductImage = asset('assets/images/orvin-laundry.png');
                                 }
                             }

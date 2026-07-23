@@ -33,7 +33,7 @@
                               d="M120,160 L180,140 L200,190 L130,220 Z" />
                               
                         <!-- Western Region (Gujarat) -->
-                        <path class="india-state" data-name="Gujarat" data-dealers="105" data-cities="Vadodara (HQ), Ahmedabad, Surat, Rajkot" data-details="HQ and Main Formulation Plant. 105 authorized retail dealer outlets and 2 central inventory warehouses."
+                        <path class="india-state" data-name="Gujarat" data-dealers="105" data-cities="Nadiad (HQ), Ahmedabad, Surat, Rajkot" data-details="HQ and Main Formulation Plant. 105 authorized retail dealer outlets and 2 central inventory warehouses."
                               d="M80,230 L130,220 L150,260 L140,290 L95,290 L80,260 Z" />
                               
                         <!-- Central/Western Region (Maharashtra) -->
@@ -50,7 +50,7 @@
                               
                         <!-- Decorative Map Markers -->
                         <circle cx="140" cy="270" r="5" fill="#0d9488" />
-                        <text x="150" y="275" font-family="Outfit" font-size="12" font-weight="bold" fill="#0b132b">Vadodara (HQ)</text>
+                        <text x="150" y="275" font-family="Outfit" font-size="12" font-weight="bold" fill="#0b132b">Nadiad (HQ)</text>
                         
                         <circle cx="160" cy="330" r="4" fill="#0284c7" />
                         <text x="170" y="335" font-family="Outfit" font-size="10" fill="#64748b">Mumbai Office</text>
@@ -67,7 +67,7 @@
                         <h5 class="fw-700 text-teal mb-4" id="map-card-dealers" style="color: var(--secondary-color);">105 Active Dealers</h5>
                         
                         <div class="p-3 bg-light rounded-3 mb-4">
-                            <h6 class="fw-700 text-dark mb-1" id="map-card-cities">Key Hubs: Vadodara (HQ), Ahmedabad, Surat, Rajkot</h6>
+                            <h6 class="fw-700 text-dark mb-1" id="map-card-cities">Key Hubs: Nadiad (HQ), Ahmedabad, Surat, Rajkot</h6>
                         </div>
 
                         <p class="text-muted" id="map-card-details" style="font-size: 0.95rem; line-height: 1.6;">

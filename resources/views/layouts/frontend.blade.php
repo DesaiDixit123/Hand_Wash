@@ -100,36 +100,27 @@
                         <div class="dropdown-menu mega-menu-container position-absolute shadow" aria-labelledby="productsDropdown">
                             <div class="container">
                                 <div class="row g-4 text-start text-dark">
-                                    <div class="col-lg-3">
-                                        <h6 class="font-outfit fw-800 text-teal mb-3" style="color: var(--secondary-blue-500);">Featured Categories</h6>
+                                    <div class="col-lg-4">
+                                        <h6 class="font-outfit fw-800 text-teal mb-3" style="color: var(--secondary-blue-500);">Hygiene & Care</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'hand-wash']) }}">Hand Wash Series</a></li>
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'dish-wash']) }}">Dish Washing Liquids</a></li>
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'floor-cleaner']) }}">Multi-surface Floor Cleaners</a></li>
+                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'hand-wash']) }}"><i class="fa-solid fa-hand-holding-droplet me-2 text-teal"></i> Hand Wash Gel</a></li>
+                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'dish-washer']) }}"><i class="fa-solid fa-wine-glass me-2 text-teal"></i> Dish Washer Gel</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-3">
-                                        <h6 class="font-outfit fw-800 text-teal mb-3" style="color: var(--secondary-blue-500);">Detergents</h6>
+                                    <div class="col-lg-4">
+                                        <h6 class="font-outfit fw-800 text-teal mb-3" style="color: var(--secondary-blue-500);">Cleaners & Laundry</h6>
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'liquid-detergent']) }}">Liquid Detergents</a></li>
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'detergent-powder']) }}">Heavy Duty Detergent Powders</a></li>
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'fabric-wash']) }}">Fabric Wash & Softeners</a></li>
+                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'toilet-cleaner']) }}"><i class="fa-solid fa-toilet me-2 text-teal"></i> Toilet Cleaner</a></li>
+                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'floor-cleaner']) }}"><i class="fa-solid fa-border-all me-2 text-teal"></i> Floor Cleaner</a></li>
+                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'washing-liquid']) }}"><i class="fa-solid fa-soap me-2 text-teal"></i> Washing Liquid</a></li>
                                         </ul>
                                     </div>
-                                    <div class="col-lg-3">
-                                        <h6 class="font-outfit fw-800 text-teal mb-3" style="color: var(--secondary-blue-500);">Specialty Cleaners</h6>
-                                        <ul class="list-unstyled">
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'white-cleaner']) }}">White Phenyle Cleaners</a></li>
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'black-cleaner']) }}">Black Coal-Tar Cleaners</a></li>
-                                            <li><a class="dropdown-item py-2 px-0 text-muted font-outfit" href="{{ route('products', ['category' => 'toilet-cleaner']) }}">Acid Toilet Bowl Cleaners</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-3 bg-light p-4 rounded-3 d-flex flex-column justify-content-between">
+                                    <div class="col-lg-4 bg-light p-4 rounded-3 d-flex flex-column justify-content-between">
                                         <div>
-                                            <h6 class="font-outfit fw-800 text-dark mb-2">Industrial Solutions</h6>
-                                            <p class="text-muted small">Need high volume raw surfactant formulations? Download our technical specification sheet.</p>
+                                            <h6 class="font-outfit fw-800 text-dark mb-2">Orvin 100% Natural Range</h6>
+                                            <p class="text-muted small">Powerful gel concentrates with germ-fighting action for household and commercial hygiene.</p>
                                         </div>
-                                        <a href="{{ route('products', ['category' => 'industrial-cleaning-chemicals']) }}" class="btn btn-sm btn-premium font-outfit py-2" style="height:44px;">Industrial Range</a>
+                                        <a href="{{ route('products') }}" class="btn btn-sm btn-premium font-outfit py-2" style="height:44px;">View All Products</a>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +144,7 @@
                         <a class="nav-link {{ Request::is('sitemap') ? 'active' : '' }}" href="{{ route('html.sitemap') }}">Sitemap</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ asset('Sree Chemical Brochure - Final.pdf') }}" target="_blank">PDF Browser</a>
+                        <a class="nav-link" href="{{ asset('Sree Chemical Brochure - Final.pdf') }}" target="_blank">PDF Brochure</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ Route::is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
@@ -211,20 +202,7 @@
                     <p class="mb-4 text-light-grey" style="color: #94a3b8; font-size: 0.95rem;">
                         {{ $settings['about_intro'] ?? 'Leading chemical manufacturer of cleaning formulations.' }}
                     </p>
-                    <div class="d-flex gap-3">
-                        @if(isset($settings['facebook_url']))
-                            <a href="{{ $settings['facebook_url'] }}" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-facebook-f"></i></a>
-                        @endif
-                        @if(isset($settings['instagram_url']))
-                            <a href="{{ $settings['instagram_url'] }}" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-instagram"></i></a>
-                        @endif
-                        @if(isset($settings['linkedin_url']))
-                            <a href="{{ $settings['linkedin_url'] }}" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-linkedin-in"></i></a>
-                        @endif
-                        @if(isset($settings['youtube_url']))
-                            <a href="{{ $settings['youtube_url'] }}" class="btn btn-sm btn-outline-light rounded-circle" style="width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;"><i class="fa-brands fa-youtube"></i></a>
-                        @endif
-                    </div>
+                    {{-- Social media icons hidden --}}
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-3 font-outfit" style="font-size: 1.1rem; border-bottom: 2px solid var(--secondary-blue-500); padding-bottom: 6px; display: inline-block;">Company</h5>
@@ -255,11 +233,8 @@
             
             <hr style="border-top: 1px solid rgba(255,255,255,0.1);">
             <div class="row align-items-center mt-4">
-                <div class="col-md-6 text-center text-md-start">
+                <div class="col-md-12 text-center">
                     <p class="mb-0 text-muted" style="font-size: 0.85rem;">&copy; {{ date('Y') }} {{ $settings['company_name'] ?? 'Sree Chemicals' }}. All rights reserved.</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-                    <p class="mb-0 text-muted" style="font-size: 0.85rem;">Designed with <i class="fa-solid fa-heart text-danger"></i> for Premium Quality Hygiene.</p>
                 </div>
             </div>
         </div>

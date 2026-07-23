@@ -22,7 +22,7 @@
 
         <!-- Sitemap Grid -->
         <div class="row g-4 justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <!-- Row 1: Core Navigation Pages -->
+            <!-- Core Navigation Pages -->
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <a href="{{ route('home') }}" class="sitemap-btn text-decoration-none text-center">
                     HOME
@@ -44,56 +44,14 @@
                 </a>
             </div>
 
-            <!-- Row 2: Consumer Hygiene -->
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'hand-wash']) }}" class="sitemap-btn text-decoration-none text-center">
-                    HAND WASH
+            <!-- Product Categories -->
+            @foreach($categories as $category)
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <a href="{{ route('products', ['category' => $category->slug]) }}" class="sitemap-btn text-decoration-none text-center">
+                    {{ strtoupper($category->name) }}
                 </a>
             </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['search' => 'super wash']) }}" class="sitemap-btn text-decoration-none text-center">
-                    SUPER WASH
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'liquid-detergent']) }}" class="sitemap-btn text-decoration-none text-center">
-                    WASHING LIQUID
-                </a>
-            </div>
-
-            <!-- Row 3: Detergents & Specialty Cleaners -->
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'detergent-powder']) }}" class="sitemap-btn text-decoration-none text-center">
-                    DETERGENT POWDER
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'dish-wash']) }}" class="sitemap-btn text-decoration-none text-center">
-                    DISH WASH
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'white-cleaner']) }}" class="sitemap-btn text-decoration-none text-center">
-                    WHITE CLEANER
-                </a>
-            </div>
-
-            <!-- Row 4: Industrial & Household Specialties -->
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'black-cleaner']) }}" class="sitemap-btn text-decoration-none text-center">
-                    BLACK CLEANER
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'detergent-powder']) }}" class="sitemap-btn text-decoration-none text-center">
-                    WASHING POWDER
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <a href="{{ route('products', ['category' => 'hand-wash']) }}" class="sitemap-btn text-decoration-none text-center">
-                    GLYCERIN SOAP
-                </a>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>

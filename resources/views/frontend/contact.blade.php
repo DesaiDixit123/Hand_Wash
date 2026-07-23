@@ -33,7 +33,7 @@
                     </div>
                     <div>
                         <h6 class="fw-700 text-dark mb-1">Corporate HQ & Plant</h6>
-                        <p class="text-muted small mb-0">{{ $settings['address'] ?? '101, Chemical Zone, GIDC, Vadodara, Gujarat, India' }}</p>
+                        <p class="text-muted small mb-0">{{ $settings['address'] ?? '124, Nexus-1, Uttarsanda Road, Nadiad, Gujarat, India' }}</p>
                     </div>
                 </div>
 
